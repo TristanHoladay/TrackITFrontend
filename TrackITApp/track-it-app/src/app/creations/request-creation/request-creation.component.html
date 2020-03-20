@@ -1,0 +1,10 @@
+<app-header></app-header>
+<h1 class="page-headers creation-header">Create an Inventory Request</h1>
+
+<div class="form-group creation-form-container">
+    <form class="creation-form" [formGroup]="form" (ngSubmit)="onSubmit(form)">
+        <formly-form [form]="form" [fields]="fields" [options]="options" [model]="model"></formly-form>
+        <button mat-raised-button color="primary">Submit</button>
+    </form>
+</div>
+<app-footer></app-footer>

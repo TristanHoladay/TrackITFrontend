@@ -1,0 +1,37 @@
+#logo {
+    font-size: 3em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    position: relative;
+    right: 10em;
+    margin-top: .5em;
+}
+
+#logo h1 {
+    text-decoration: underline;
+}
+
+#container {
+    height: 130vh;
+    display: grid;
+    grid-column: 1fr;
+    justify-items: center;
+    background-color:rgb(18,46,77);
+}
+
+#login-form {
+    width: 30%;
+    height: 70%;
+    position: relative;
+    top: -5em;
+    background-color: rgba(18, 46, 77, 0.027);
+    margin-bottom: 4em;
+}
+
+form {
+    color: white;
+    width: 60%;
+    height: auto;
+    box-sizing: border-box;
+    margin: 2em 3em;
+}

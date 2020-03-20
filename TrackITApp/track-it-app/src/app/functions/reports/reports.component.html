@@ -1,0 +1,126 @@
+<app-header></app-header>
+
+  <div id="reportingHeader">
+    <h1>Run Reporting</h1>
+    <h4>*Select desired data options and press "Generate"</h4>
+  </div>
+  
+<div id="selectors-container" class="row">
+        <div class="col-sm">
+                <div>
+                  <div ngbDropdown class="d-inline-block">
+                    <h4>Select Category</h4>
+                    <button class="btn btn-outline-primary" ngbDropdownToggle>Category</button>
+                    <div ngbDropdownMenu>
+                        <button ngbDropdownItem (click)="fetchSource('company')">Companies</button>
+                        <button ngbDropdownItem (click)="fetchSource('user')">Users</button>
+                        <button ngbDropdownItem (click)="fetchSource('resourcetype')">Resource Types</button>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="disList" class="selectedDataDisplay">
+                  <h3>{{ disList }}</h3>
+                </div>
+            </div>
+        
+            <div *ngIf="company" class="col-sm">
+                    <div>
+                      <div ngbDropdown class="d-inline-block">
+                        <h4>Select Company</h4>
+                        <button class="btn btn-outline-primary" ngbDropdownToggle>Company</button>
+                        <div ngbDropdownMenu>
+                            <button *ngFor="let company of companies" ngbDropdownItem (click)="catchIdAndName(company.id, company.name)">{{company.name}}</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="disObject" class="selectedDataDisplay">
+                      <h3>{{ disObject }}</h3>
+                    </div>
+            </div>
+
+            <div *ngIf="user" class="col-sm">
+                    <div>
+                      <div ngbDropdown class="d-inline-block">
+                        <h4>Select User</h4>
+                        <button class="btn btn-outline-primary" ngbDropdownToggle>Users</button>
+                        <div ngbDropdownMenu>
+                            <button *ngFor="let user of users" ngbDropdownItem (click)="catchIdAndName(user.id, user.fullName)">{{user.fullName}}</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="disObject" class="selectedDataDisplay">
+                      <h3>{{ disObject }}</h3>
+                    </div>
+            </div>
+
+            <div *ngIf="resourceType" class="col-sm">
+                    <div>
+                      <div ngbDropdown class="d-inline-block">
+                        <h4>Select Resource Type</h4>
+                        <button class="btn btn-outline-primary" ngbDropdownToggle>Resource Type</button>
+                        <div ngbDropdownMenu>
+                            <button *ngFor="let type of types" ngbDropdownItem (click)="[catchIdAndName(type.id, type.name), defineDataService('items')]">{{type.name}}</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="disObject" class="selectedDataDisplay">
+                      <h3>{{ disObject }}</h3>
+                    </div>
+            </div>
+
+            <div *ngIf="selectedId && company" class="col-sm">
+                    <div>
+                      <div ngbDropdown class="d-inline-block">
+                        <h5>Select Type of Data</h5>
+                        <button class="btn btn-outline-primary" ngbDropdownToggle>Type</button>
+                        <div ngbDropdownMenu>
+                            <button ngbDropdownItem (click)="defineDataService('tickets')">Tickets</button>
+                            <button ngbDropdownItem (click)="defineDataService('requests')">Inventory Requests</button>
+                            <button ngbDropdownItem (click)="defineDataService('items')">Items</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="disDT" class="selectedDataDisplay">
+                      <h3>{{ disDT }}</h3>
+                    </div>
+            </div>
+
+            <div *ngIf="selectedId && user" class="col-sm">
+                    <div>
+                      <div ngbDropdown class="d-inline-block">
+                        <h5>Select Type of Data</h5>
+                        <button class="btn btn-outline-primary" ngbDropdownToggle>Type</button>
+                        <div ngbDropdownMenu>
+                            <button ngbDropdownItem (click)="defineDataService('tickets')">Tickets</button>
+                            <button ngbDropdownItem (click)="defineDataService('requests')">Inventory Requests</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf="disDT" class="selectedDataDisplay">
+                      <h3>{{ disDT }}</h3>
+                    </div>
+            </div>
+
+            <button id="genButton" class="btn btn-primary" (click)="GenerateColumns()">Generate</button>
+            <button id="clearButton" class="btn btn-primary" (click)="clearDataTableandView()">Clear</button>
+</div>
+
+
+<div id="table-container">
+<mat-form-field *ngIf="dataSource">
+        <input (keyup)="applyFilter($event.target.value)" matInput [formControl]="myControl" placeholder="Filter">
+</mat-form-field>
+
+<mat-table *ngIf="dataSource" [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <ng-container *ngFor="let column of columns" [matColumnDef]="column">
+          <mat-header-cell *matHeaderCellDef>{{ column }}</mat-header-cell>
+          <mat-cell *matCellDef="let object">{{ object[column] }}</mat-cell>
+        </ng-container>
+    
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+</mat-table>
+</div>
+
+<div id="break"></div>
+<app-footer></app-footer>

@@ -1,0 +1,43 @@
+#reportingHeader {
+    margin: 1em 1em;
+}
+
+#break {
+    margin-bottom: 5em;
+}
+
+#selectors-container {
+    width: 90%;
+    box-sizing: border-box;
+    margin: 2em 2em;
+}
+
+#genButton {
+    max-width: 7em;
+    max-height: 5em;
+}
+
+#clearButton {
+    margin-left: 1em;
+    padding: 0 1em;
+    max-width: 7em;
+    max-height: 5em;
+}
+
+.selectedDataDisplay {
+    margin: 1em 0em;
+    color: green;
+    border: 1px solid red;
+    width: 50%;
+    height: auto;
+    display: grid;
+    justify-content: center;
+}
+
+.selectedDataDisplay > h3 {
+    margin: 1em 1em;
+}
+
+#table-container {
+    margin: 0 1em;
+}

@@ -1,0 +1,35 @@
+<app-header></app-header>
+      <div class="options-container">
+        <div class="create-container">
+            <h1>Create A New Use Item</h1>
+            <button *ngIf="admin" class="btn btn-lg btn-outline-primary" (click)="create()">Create</button>
+        </div>
+        <div class="view-option-container">
+            <h1>View Current Items</h1>
+            <button class="btn btn-lg btn-outline-primary" (click)=showContent()>View</button>
+        </div>
+      </div>
+      
+        
+        <div class="objects-view-container" *ngIf="show">
+        <div *ngFor="let item of items">
+            <div class="object-container">
+                <label class="object-labels"><strong>Name:</strong> {{ item.name}} </label>
+                <label class="object-labels"><strong>Description:</strong> {{item.description}} </label>
+                <label class="object-labels"><strong>Amount:</strong> {{ item.amount}} </label>
+                <label class="object-labels"><strong>Cost:</strong> {{ item.cost}} </label>
+                <label class="object-labels"><strong>Storage Location:</strong> {{ item.storageLocation}} </label>
+                <label class="object-labels"><strong>Company:</strong> {{ item.company }} </label>
+                <label class="object-labels"><strong>Resource Type:</strong> {{ item.resourceType}} </label>
+                <label class="object-labels"><strong>Vehicle?:</strong> {{ item.vehicle }} </label>
+                <label class="object-labels"><strong>Ticket?:</strong> {{ ticketNum(item)  }} </label>
+                <div class="update-modal-container">
+                    <update-modal *ngIf="admin" [updateObject]="item" (updated)="updtData($event)"></update-modal>
+                </div>
+            </div>
+        </div>
+        </div>
+        <br>
+<app-footer></app-footer>
+
+

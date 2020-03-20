@@ -1,0 +1,46 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Create</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <form [formGroup]="form">
+            <mat-form-field class="full-width" *ngFor="let prop of objectProps">
+                <input matInput [type]="inputTypeVal(prop)" [placeholder]="prop" [formControlName]="prop">
+            </mat-form-field>
+        </form>
+  
+            <!-- <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button"></button> --> 
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="submit"
+        class="btn btn-danger btn-sm"
+        (click)="[create(form), modalClose && modal.close('Save click')]"
+      >
+        Yes Create
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-dark"
+        (click)="modal.close('Save click')"
+      >
+        Cancel
+      </button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+    Create
+  </button>
+  
+  <hr />

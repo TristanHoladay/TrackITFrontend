@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<div id="body-container">
+
+    <div id="qs-heading" *ngIf="showOptions">
+        <h1>Quick Stats</h1>
+    </div>
+    
+    <div *ngIf="showOptions" id="notifications-bar">
+        <div class="notifications">
+            <h3>*Vehicle(s) currently in use: {{ vehNum() }}</h3>
+        </div>
+        <div class="notifications">
+            <h3>*Uncompleted Inventory Requests: {{ reqNum() }}</h3>
+        </div>
+    </div>
+
+    <div id="greeting-container" class="card" *ngIf="showGreeting">
+        <div id="greeting">
+           <button (click)="[storeVisit(), showOptions = !showOptions]"><h1>Let's Get Trackin'</h1></button>
+        </div> 
+    </div>
+
+
+    <!-- Left Column Options-->
+    <div id="options-container" *ngIf="showOptions">
+        <div id="left-opts-column">
+            <div class="option">
+                <a routerLink="/users" routerLinkActive><h1>Users</h1></a>
+                <span class="listNumbers">{{ users.length }}</span>
+            </div>
+            <div class="option">
+                <a routerLink="/requests" routerLinkActive><h1>Inventory Requests</h1></a>
+                <span class="listNumbers reqNum">{{ requests.length }}</span>
+            </div>
+            <div class="option">
+                <a routerLink="/tickets" routerLinkActive><h1>Use Tickets</h1></a>
+                <span class="listNumbers">{{ tickets.length }}</span>
+            </div>
+            <div class="option">
+                <a routerLink="/reports" routerLinkActive><h1>Reports</h1></a>
+            </div>
+        </div>
+        
+        <!-- Right Column Options-->
+        <div id="right-opts-column">
+            <div class="option">
+                <a routerLink="/companies" routerLinkActive><h1>Companies</h1></a>
+                <span class="listNumbers">{{ companies.length }}</span>
+            </div>
+            <div class="option">
+                <a routerLink="/resourcetype" routerLinkActive><h1>Resource Types</h1></a>
+                <span class="listNumbers reqNum">{{ types.length }}</span>
+            </div>
+            <div class="option">
+                <a routerLink="/resources" routerLinkActive><h1>Resources</h1></a>
+                <span class="listNumbers">{{ items.length }}</span>
+            </div>
+            <div class="option">
+                <a routerLink="/vehicles" routerLinkActive><h1>Vehicles</h1></a>
+                <span class="listNumbers">{{ vehicles.length }}</span>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+<app-footer></app-footer>
+

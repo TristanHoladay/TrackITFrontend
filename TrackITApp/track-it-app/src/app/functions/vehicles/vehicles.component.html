@@ -1,0 +1,29 @@
+<app-header></app-header>
+      <div class="options-container">
+        <div class="create-container">
+            <h1>Create A New Vehicle</h1>
+            <creation-modal *ngIf="admin" [creationObject]="addVehicle" (addedData)="addData($event)"></creation-modal>
+        </div>
+        <div class="view-option-container">
+            <h1>View Current Vehicles</h1>
+            <button class="btn btn-lg btn-outline-primary" (click)="showContent()">View</button>
+        </div>
+      </div>
+      
+        
+        <div class="objects-view-container" *ngIf="show">
+        <div *ngFor="let vehicle of vehicles">
+            <div class="object-container">
+                <label class="object-labels"><strong>Name:</strong> {{vehicle.name  }} </label>
+                <label class="object-labels"><strong>Model:</strong> {{ vehicle.model }} </label>
+                <label class="object-labels"><strong>Licenseplate:</strong> {{ vehicle.licensePlate }} </label>
+                <label class="object-labels"><strong>Status:</strong> {{ vehicle.status }} </label>
+                <label class="object-labels"><strong>Notes:</strong> {{ vehicle.notes }} </label>
+                <div class="update-modal-container">
+                    <update-modal [updateObject]="vehicle" (updated)="updtData($event)"></update-modal>
+                </div>
+            </div>
+        </div>
+        </div>
+        <br>
+<app-footer></app-footer>

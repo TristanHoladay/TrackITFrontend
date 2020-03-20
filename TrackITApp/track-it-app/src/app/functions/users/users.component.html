@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<!-- Body -->
+<div class="options-container">
+  <div class="create-container">
+    <h1>Create A New User</h1>
+      <creation-modal [creationObject]="addUser" (addedData)="addData($event)"></creation-modal>
+  </div>
+  <div class="view-option-container">
+    <h1>View Current Users</h1>
+    <button class="btn btn-lg btn-outline-primary" (click)="showContent()">View</button>
+  </div>
+</div>
+
+<div class="objects-view-container" *ngIf="show">
+<div *ngFor="let user of Users">
+    <div class="object-container">
+        <label class="object-labels"><strong>Name:</strong> {{ user.fullName }} </label>
+        <label class="object-labels"><strong>Job Description:</strong> {{ user.jobDescription }} </label>
+        <label class="object-labels"><strong>Role: </strong> {{ adminConvertToString(user) }} </label>
+        <div class="update-modal-container">
+            <update-modal [updateObject]="user" (updated)="updtData($event)"></update-modal>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+<app-footer></app-footer>
+    

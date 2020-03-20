@@ -1,0 +1,31 @@
+<app-header></app-header>
+      <div class="options-container">
+        <div class="create-container">
+          <h1>Create A New Inventory Request</h1>
+          <button class="btn btn-lg btn-outline-primary" (click)="create()">Create</button>
+        </div>
+        <div class="view-option-container">
+          <h1>View Current Inventory Requests</h1>
+          <button class="btn btn-lg btn-outline-primary" (click)="showContent()">View</button>
+        </div>
+      </div>
+        
+        <br>
+        
+        <div class="objects-view-container" *ngIf="show">
+        <div *ngFor="let request of requests">
+            <div class="object-container">
+                <label class="object-labels"><strong>Details:</strong> {{ request.details}} </label>
+                <label class="object-labels"><strong>Resource Type:</strong> {{ request.resourceType }} </label>
+                <label class="object-labels"><strong>Date:</strong> {{ request.date | date:'short' }} </label>
+                <label class="object-labels"><strong>Company:</strong> {{ request.company }} </label>
+                <label class="object-labels"><strong>User: </strong> {{ request.user }} </label>
+                <label class="object-labels"><strong>Complete:</strong> {{ request.complete }} </label>
+                <div class="update-modal-container">
+                    <update-modal [updateObject]="request" (updated)="updtData($event)"></update-modal>
+                </div>
+            </div>
+        </div>
+        </div> 
+        <br>
+<app-footer></app-footer>
