@@ -28,6 +28,7 @@
     "@ngx-formly/bootstrap": "^5.5.15",
     "@ngx-formly/core": "^5.5.15",
     "@ngx-formly/material": "^5.5.15",
+    "@service-work/is-loading": "^3.0.3",
     "angular-jwt": "^0.1.11",
     "bootstrap": "^4.4.1",
     "jwt-decode": "^2.2.0",

@@ -1,12 +1,10 @@
 <app-header></app-header>
       <div class="options-container">
         <div class="create-container">
-            <h1>Create A New Use Item</h1>
-            <button *ngIf="admin" class="btn btn-lg btn-outline-primary" (click)="create()">Create</button>
+            <button *ngIf="admin" class="btn btn-lg btn-outline-primary viewbtn" (click)="create()"><h1>Create New Entity</h1></button>
         </div>
         <div class="view-option-container">
-            <h1>View Current Items</h1>
-            <button class="btn btn-lg btn-outline-primary" (click)=showContent()>View</button>
+            <button class="btn btn-lg btn-outline-primary viewbtn" (click)=showContent()><h1>View Current Items</h1></button>
         </div>
       </div>
       

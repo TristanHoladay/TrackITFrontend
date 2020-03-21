@@ -90,7 +90,8 @@
 
 .option > a > h1 {
     display: inline;
-    text-shadow: 1px 0px white;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
 a {
@@ -111,7 +112,6 @@ a {
     display: grid;
     justify-content: center;
     align-content: center;
-    box-shadow: 1px 0px 1px 0px white;
 }
 
 .reqNum {

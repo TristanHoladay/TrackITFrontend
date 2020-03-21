@@ -26,8 +26,9 @@
 
 .selectedDataDisplay {
     margin: 1em 0em;
-    color: green;
-    border: 1px solid red;
+    color: white;
+    text-shadow: 2px 2px black;
+    background-color: rgb(18, 46, 77);
     width: 50%;
     height: auto;
     display: grid;

@@ -8,7 +8,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { MaterialModule } from './material.module';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyMaterialModule } from '@ngx-formly/material';
-import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+//import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 
 import { AppRoutingModule } from './app-routing.module';
