@@ -97,6 +97,7 @@ header {
         color:white;
     }
 
+
     .dropmenu {
         background-color: rgb(18, 46, 77);
     }
@@ -121,5 +122,9 @@ header {
         display: inline-block;
         margin: 0 .5em;
         margin-bottom: .5em;
+    }
+
+    .dropmenu a {
+        font-size: 1.4em;
     }
 }

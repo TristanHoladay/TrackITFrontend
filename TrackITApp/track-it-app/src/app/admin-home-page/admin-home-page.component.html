@@ -17,7 +17,7 @@
 
     <div id="greeting-container" class="card" *ngIf="showGreeting">
         <div id="greeting">
-           <button (click)="[storeVisit(), showOptions = !showOptions]"><h1>Let's Get Trackin'</h1></button>
+           <button (click)="[storeVisit(), showOptions = !showOptions]"><h1 id="h1greeting">Let's Get Trackin'</h1></button>
         </div> 
     </div>
 
@@ -29,7 +29,7 @@
                 <a routerLink="/users" routerLinkActive><h1>Users</h1></a>
                 <span class="listNumbers">{{ users.length }}</span>
             </div>
-            <div class="option">
+            <div class="option in-reqs">
                 <a routerLink="/requests" routerLinkActive><h1>Inventory Requests</h1></a>
                 <span class="listNumbers reqNum">{{ requests.length }}</span>
             </div>
@@ -38,7 +38,8 @@
                 <span class="listNumbers">{{ tickets.length }}</span>
             </div>
             <div class="option">
-                <a routerLink="/reports" routerLinkActive><h1>Reports</h1></a>
+                <a routerLink="/vehicles" routerLinkActive><h1>Vehicles</h1></a>
+                <span class="listNumbers">{{ vehicles.length }}</span>
             </div>
         </div>
         
@@ -48,7 +49,7 @@
                 <a routerLink="/companies" routerLinkActive><h1>Companies</h1></a>
                 <span class="listNumbers">{{ companies.length }}</span>
             </div>
-            <div class="option">
+            <div class="option rtsh1">
                 <a routerLink="/resourcetype" routerLinkActive><h1>Resource Types</h1></a>
                 <span class="listNumbers reqNum">{{ types.length }}</span>
             </div>
@@ -57,8 +58,7 @@
                 <span class="listNumbers">{{ items.length }}</span>
             </div>
             <div class="option">
-                <a routerLink="/vehicles" routerLinkActive><h1>Vehicles</h1></a>
-                <span class="listNumbers">{{ vehicles.length }}</span>
+                <a routerLink="/reports" routerLinkActive><h1>Reports</h1></a>
             </div>
         </div>
         

@@ -1,4 +1,6 @@
 #body-container {
+    box-sizing: border-box;
+    width: 100%;
     height: auto;
     display: grid;
 }
@@ -17,8 +19,13 @@
     border-bottom: 1px solid red;
 }
 
-.notifications h3 {
-    margin: 0em 0em 2em 4em;
+.notifications {
+    display: grid;
+    justify-items: center;
+    box-sizing: border-box;
+}
+
+h3 {
     color: red;
 }
 
@@ -90,7 +97,8 @@
 
 .option > a > h1 {
     display: inline;
-    text-shadow: 1px 0px white;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
 a {
@@ -111,9 +119,137 @@ a {
     display: grid;
     justify-content: center;
     align-content: center;
-    box-shadow: 1px 0px 1px 0px white;
 }
 
 .reqNum {
     margin-right: 1em;
+}
+
+@media only screen and (max-width: 1000px) {
+    .body-container {
+        justify-items: center;
+    }
+
+    #greeting {
+        height: auto;
+        width: 100%;
+        margin: 1em 1em;
+        display: grid;
+        justify-items: center;
+    }
+    
+    #greeting-container {
+        height: auto;
+        width: 80%;
+        background-color: rgba(0, 34, 59, 0.685);
+        top: 40%;
+        left: 10%;
+        display: grid;
+        justify-items: center;
+    }
+    
+    #greeting button {
+        margin: 0em;
+        background-color: rgba(0, 34, 59, 0.685);
+    }
+    #greeting h1 {
+        font-size: 3em;
+        color: white;
+    }
+    
+
+    #qs-heading {
+        justify-self: center;
+        margin: 1em 0em;
+        color: red;
+    }
+
+    #notifications-bar {
+        box-sizing: border-box;
+        grid-template-columns: 1fr;
+        margin: 0 0em;
+        width: 100%;
+        height: auto;
+        justify-content: start;
+        border-bottom: 1px solid red;
+    }
+    
+    .notifications {
+        display: grid;
+        justify-items: right;
+        width: 100%;
+        height: auto;
+        border: 1px solid red;
+        background-color: yellow;
+        box-sizing: border-box;
+    }
+
+    h3 {
+        padding-left: .3em;
+    }
+
+    #options-container {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 0em;
+        height: auto;
+        width: auto;
+        margin: 1em 1em;
+    }
+
+    #left-opts-column {
+        width: 100%;
+        grid-column: 1;
+        margin-left: 0em;
+        display: grid;
+    }
+    
+    #right-opts-column {
+        width: 100%;
+        grid-column: 1;
+        display: grid;
+    }
+    
+    .option {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        margin-bottom: .5em;
+        width: 100%;
+        height: auto;
+        min-height: 7em;
+        border-radius: 10%;
+        background-color: rgb(18,46,77);
+    }
+    
+    .option > a {
+        margin-top: 1em;
+    }
+    
+    a {
+        text-decoration: none;
+        margin-left: 1em;
+    }
+    
+    .listNumbers {
+        margin-right: 0em;
+        padding: .5em .2em;
+        color: white;
+        font-size: 5em;
+        border-radius: 0%;
+        background-color: rgb(18,46,77);
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .in-reqs > a {
+        margin-left: 3em;
+    }
+
+    .rtsh1 > a {
+        margin-left: 3em;
+    }
 }
