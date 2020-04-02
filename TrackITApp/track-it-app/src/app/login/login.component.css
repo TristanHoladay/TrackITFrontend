@@ -19,6 +19,13 @@
     background-color:rgb(18,46,77);
 }
 
+#loading-spinner {
+    position: absolute;
+    top: 16em;
+    left: 37em;
+    margin-top: 1em;
+}
+
 #login-form {
     width: 30%;
     height: 70%;
@@ -34,4 +41,22 @@ form {
     height: auto;
     box-sizing: border-box;
     margin: 2em 3em;
+}
+
+@media only screen and (max-width: 1100px) {
+    #logo {
+        right: 0em;
+        margin-top: 1em;
+    }
+
+    #login-form {
+        width: 70%;
+        display: grid;
+        justify-items: center;
+        margin-bottom: 0em;
+    }
+
+    form {
+        padding-top: 2em;
+    }
 }

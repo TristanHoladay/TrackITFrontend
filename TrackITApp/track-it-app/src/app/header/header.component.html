@@ -1,22 +1,22 @@
-<header>
-    <div class="row home-nav">
-      <div class="col-5 home-btn">
+<header id="header">
+    <div class="top-nav">
+      <div class="home-btn">
         <a routerLink="/home" routerLinkActive="active"><button class="btn btn-primary">Home</button></a>
       </div>
-      <div class="col-sm logo">
+      <div class="logo">
         <h1>TrackIT</h1>
       </div>
-      <div class="col-1 logout-btn">
+      <div class="logout-btn">
         <button class="btn btn-warning" (click)="logOut()">Log Out</button>
       </div>
     </div>
-    <div class="nav-container">
-      <nav class="row">
+    <div class="bottom-nav">
+      <nav class="nav-container">
         <ul class="nav-ul">
           <li class="nav-btn"><a routerLink="/users" routerLinkActive><button class="btn-primary">Users</button></a></li>
           <li class="nav-btn"><a routerLink="/companies" routerLinkActive><button class="btn-primary">Companies</button></a></li>
           <li class="nav-btn"><a routerLink="/resources" routerLinkActive><button class="btn-primary">Resources</button></a></li>
-          <li class="nav-btn"><a routerLink="/resourcetype" routerLinkActive><button class="btn-primary">Resourc Types</button></a></li>
+          <li class="nav-btn"><a routerLink="/resourcetype" routerLinkActive><button class="btn-primary">Resource Types</button></a></li>
           <li class="nav-btn"><a routerLink="/vehicles" routerLinkActive><button class="btn-primary">Vehicles</button></a></li>
           <li class="nav-btn"><a routerLink="/tickets" routerLinkActive><button class="btn-primary">Tickets</button></a></li>
           <li class="nav-btn"><a routerLink="/requests" routerLinkActive><button class="btn-primary">Requests</button></a></li>
@@ -24,4 +24,19 @@
         </ul>
       </nav>
     </div>
+      <div class="nav-dropdown">
+        <div ngbDropdown class="d-inline-block drop-cont">
+          <button class="btn dropbtn-toggle" ngbDropdownToggle>Categories</button>
+          <div ngbDropdownMenu class="dropmenu">
+            <a routerLink="/users" routerLinkActive><button ngbDropdownItem>Users</button></a>
+            <a routerLink="/companies" routerLinkActive><button ngbDropdownItem>Companies</button></a>
+            <a routerLink="/resources" routerLinkActive><button ngbDropdownItem>Resources</button></a>
+            <a routerLink="/resourcetype" routerLinkActive><button ngbDropdownItem>Resource Types</button></a>
+            <a routerLink="/vehicles" routerLinkActive><button ngbDropdownItem>Vehicles</button></a>
+            <a routerLink="/tickets" routerLinkActive><button ngbDropdownItem>Tickets</button></a>
+            <a routerLink="/requests" routerLinkActive><button ngbDropdownItem>Requests</button></a>
+            <a routerLink="/reports" routerLinkActive><button ngbDropdownItem>Reports</button></a>
+          </div>
+        </div>
+      </div>
   </header>

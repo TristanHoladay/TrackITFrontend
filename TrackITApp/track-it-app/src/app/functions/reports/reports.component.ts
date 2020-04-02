@@ -1,9 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatTable } from '@angular/material/table';
-import { MatFormField } from '@angular/material/form-field';
-import { MatSortModule } from '@angular/material/sort';
-import { MatSort } from '@angular/material/sort';
 import { FormControl } from '@angular/forms';
 
 import { UserService } from 'src/app/services/user.service';
@@ -17,14 +13,12 @@ import { ICompany } from 'src/app/interfaces/icompany';
 import { IUser } from 'src/app/interfaces/iuser';
 import { IResourceType } from 'src/app/interfaces/resource-type';
 import { Router, ParamMap, ActivatedRoute } from '@angular/router';
-import { IDynamicObject } from 'src/app/interfaces/idynamic-object';
-import { Observable, Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.css'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 

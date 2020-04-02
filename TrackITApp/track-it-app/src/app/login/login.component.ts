@@ -1,21 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth-service.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
-import { first } from 'rxjs/operators';
-import { decode } from 'jwt-decode';
+import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
+import { first, filter } from 'rxjs/operators';
 import { RoleGuardService } from '../services/role-guard.service';
+import { Observable } from 'rxjs';
+//import { IsLoadingService } from '@service-work/is-loading';
+import {LoadingIndicatorModule, startLoadingIndicator, stopLoadingIndicator} from '@btapai/ng-loading-indicator';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import { ThemePalette } from '@angular/material/core';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   error: any;
   loading: boolean;
+
+  //Progress Spinner
+  color: ThemePalette = 'warn';
+  mode: ProgressSpinnerMode = 'indeterminate';
+
+  @startLoadingIndicator
+  triggerLoadingIndicator() {
+    setTimeout(this.triggerLoadingIndicatorStop.bind(this), 500);
+  }
+
+  @stopLoadingIndicator
+  triggerLoadingIndicatorStop() {
+    console.log('Stopped');
+  }
 
   constructor(
     private authService: AuthService,
@@ -29,6 +48,7 @@ export class LoginComponent implements OnInit {
       email: new FormControl(),
       password: new FormControl()
     });
+
   }
 
   onSubmit(loginData) {

@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtHelperService } from '@auth0/angular-jwt';
-//import { tokenNotExpired } from 'angular2-jwt';
 import { JwtModule } from '@auth0/angular-jwt';
 import { MaterialModule } from './material.module';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyMaterialModule } from '@ngx-formly/material';
-//import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
+import {LoadingIndicatorModule} from '@btapai/ng-loading-indicator';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -85,12 +85,14 @@ export function tokenGetter() {
     ReactiveFormsModule,
     FormlyModule.forRoot(),
     FormlyMaterialModule,
+    MatProgressSpinnerModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ["localhost:44314", "trackitapi.azurewebsites.net"]
       }
-    })
+    }),
+    LoadingIndicatorModule.forRoot()
   ],
   providers: [
     AuthService,

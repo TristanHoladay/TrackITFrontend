@@ -26,7 +26,7 @@ export class ResourcesComponent implements OnInit {
       this.items = data;
     });
 
-    //using behaviour subject service for updating view after new object is created from sibling component
+    //using behaviour subject service for updating view after new object is created
     this.dService.currentData.subscribe(dataSub => {
       this.dataSubject = dataSub
       if(this.dataSubject != null) {

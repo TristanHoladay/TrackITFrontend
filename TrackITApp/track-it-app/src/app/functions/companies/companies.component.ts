@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterViewChecked, AfterContentChecked } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CompanyService } from 'src/app/services/company.service';
 import { ICompany } from 'src/app/interfaces/icompany';
 import { UserService } from 'src/app/services/user.service';
 import { IUser } from 'src/app/interfaces/iuser';
 import { AuthService } from 'src/app/services/auth-service.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-companies',
@@ -31,6 +32,7 @@ export class CompaniesComponent implements OnInit {
 
 
   ngOnInit() {
+
     this.compService.getAllCompanies().subscribe(data => {
       this.companies = data;
     });
@@ -41,12 +43,12 @@ export class CompaniesComponent implements OnInit {
   
   }
 
-   //Update object list to force onChangeDetection
+   //Update object list 
    addData(newData) {
     this.companies.push(newData);
   }
 
-  //Update objecct and the view after update modal successfully executed
+  //Update object and the view after update modal successfully executed
   updtData(updatedData) {
    let oldData = this.companies.find(ud => ud.id == updatedData.id) 
 

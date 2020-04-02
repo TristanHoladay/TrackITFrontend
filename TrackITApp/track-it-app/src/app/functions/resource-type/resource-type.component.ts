@@ -11,9 +11,10 @@ export class ResourceTypeComponent implements OnInit {
   types: IResourceType[] = [];
   show: boolean = false;
   admin = false;
-  addType: {
+  addType: IResourceType = {
     id: 1,
-    name: ""
+    name: "",
+    resourceTypeT: null
   }
 
   constructor(

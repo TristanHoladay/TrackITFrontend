@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth-service.service';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
-import { Observable } from 'rxjs';
 import { IsLoadingService } from '@service-work/is-loading';
 import { filter } from 'rxjs/operators';
-//import { ProgressBarMode } from '@angular/material/progress-bar';
+import { startLoadingIndicator, stopLoadingIndicator } from '@btapai/ng-loading-indicator';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +12,16 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'TrackIT';
-  isLoading: Observable<boolean>;
+
+  @startLoadingIndicator
+  triggerLoadingIndicator() {
+    setTimeout(this.triggerLoadingIndicatorStop.bind(this), 500);
+  }
+
+  @stopLoadingIndicator
+  triggerLoadingIndicatorStop() {
+    console.log('Stopped');
+  }
 
   constructor(
     private authService: AuthService,
@@ -22,35 +30,6 @@ export class AppComponent {
   ) {}
 
 
-  ngOnInit() {
-    this.isLoading = this.isLoadingService.isLoading$();
-
-    this.router.events
-      .pipe(
-        filter(
-          event =>
-            event instanceof NavigationStart ||
-            event instanceof NavigationEnd ||
-            event instanceof NavigationCancel ||
-            event instanceof NavigationError,
-        ),
-      )
-      .subscribe(event => {
-        if(event instanceof NavigationStart) {
-          this.isLoadingService.add();
-          return;
-        }
-
-        this.isLoadingService.remove();
-      });
-  }
-
-
-
-
-  logOut() {
-    this.authService.logout;
-    this.router.navigateByUrl("login");
-  }
+  ngOnInit() {}
 
 }
