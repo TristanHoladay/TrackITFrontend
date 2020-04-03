@@ -99,6 +99,7 @@ export class ReportsComponent implements OnInit {
     if(object == "resourcetype") {
       this.getTypes();
       this.setViewTrue(object);
+      this.disList = "resource type";
     }
   }
 
