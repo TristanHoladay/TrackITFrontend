@@ -167,6 +167,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         background-color: rgb(18,46,77);
         padding: 1em 1em;
     }
+
+    /* Styling for Formly Forms */
+    .creation-form-container {
+        margin: 2em 0em;
+        justify-items: center;
+    }
+
+    .creation-form {
+        margin-left: 0em;
+        width: 95%;
+    }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 898px) {
@@ -220,6 +231,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         background-color: rgb(18,46,77);
         padding: 1em 1em;
     }
+
+     /* Styling for Formly Forms */
+     .creation-form-container {
+        margin: 2em 0em;
+        justify-items: center;
+    }
+
+    .creation-form {
+        margin-left: 0em;
+        width: 95%;
+    }
 }
 
 @media only screen and (min-width: 899px) and (max-width: 1200px) {
@@ -259,6 +281,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         height: 100%;
         width: 27rem;
     }
+
+     /* Styling for Formly Forms */
+    .creation-form {
+        margin-left: 0em;
+        width: 60%;
+    }
 }
 
 @media only screen and (min-width: 1201px) and (max-width: 1330px) {
@@ -271,7 +299,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         width: 100%;
         margin-left: -4em;
     }
-    
+
     .object-container {
         width: 35em;
     }
@@ -286,5 +314,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
     .cvc {
         width: 84%;
+    }
+
+     /* Styling for Formly Forms */ 
+    .creation-form {
+        margin-left: 1em;
+        width: 50%;
     }
 }
