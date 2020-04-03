@@ -19,6 +19,7 @@ body {
      overflow: hidden;
      display: block;
      padding-bottom: 3em;
+     box-sizing: border-box;
  }
 
  .page-headers {
@@ -72,6 +73,7 @@ body {
     color: white;
     text-shadow: 1px 1px black;
     letter-spacing: 1px;
+    box-sizing: border-box;
 }
 
 .object-container {
@@ -80,6 +82,7 @@ body {
     border: 1px solid white;
     background-color: rgb(18,46,77);
     padding: 1em 1em;
+    box-sizing: border-box;
 }
 
 .object-labels {
@@ -113,3 +116,175 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media only screen and (max-width: 600px) {
+    .options-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        color: white;
+        justify-items: center;
+    }
+
+    .create-container {
+        width: 68%;
+        height: 10em;
+        margin-top: 2em;
+        margin-left: 0em;
+    }
+    
+    .view-option-container {
+        display: grid;
+        margin-top: 4em;
+        width: 90%;
+        margin-left: 0em;
+        justify-content: center;
+    }
+
+    .viewbtn {
+        width: auto;
+        height: 8em;
+        background-color: rgb(18, 46, 77);
+        color: white;
+        text-shadow: 2px 2px black;
+        border-radius: 1em;
+    }
+
+    .objects-view-container {
+        grid-template-columns: 1fr;
+        width: auto;
+        height: auto;
+        margin: 1em 1em;
+        color: white;
+        text-shadow: 1px 1px black;
+        letter-spacing: 1px;
+        justify-items: center;
+    }
+    
+    .object-container {
+        height: 100%;
+        width: 17rem;
+        border: 1px solid white;
+        background-color: rgb(18,46,77);
+        padding: 1em 1em;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 898px) {
+
+    .options-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        color: white;
+        justify-items: center;
+    }
+
+    .create-container {
+        width: 45%;
+        height: 10em;
+        margin-top: 2em;
+        margin-left: 0em;
+    }
+    
+    .view-option-container {
+        display: grid;
+        margin-top: 4em;
+        width: 90%;
+        margin-left: 0em;
+        justify-content: center;
+    }
+
+    .viewbtn {
+        width: auto;
+        height: 8em;
+        background-color: rgb(18, 46, 77);
+        color: white;
+        text-shadow: 2px 2px black;
+        border-radius: 1em;
+    }
+
+    .objects-view-container {
+        grid-template-columns: 1fr;
+        width: auto;
+        height: auto;
+        margin: 1em 1em;
+        color: white;
+        text-shadow: 1px 1px black;
+        letter-spacing: 1px;
+        justify-items: center;
+    }
+
+    .object-container {
+        height: 100%;
+        width: 30rem;
+        border: 1px solid white;
+        background-color: rgb(18,46,77);
+        padding: 1em 1em;
+    }
+}
+
+@media only screen and (min-width: 899px) and (max-width: 1200px) {
+
+    .options-container {
+        column-gap: 1em;
+    }
+
+    .create-container {
+        margin-left: 3em;
+    }
+    
+    .view-option-container {
+        width: 100%;
+        margin-left: -4em;
+    }
+
+    .ivc {
+        width: 84%;
+    }
+
+    .rtc {
+        width: 84%
+    }
+
+    .cvc {
+        width: 84%;
+    }
+
+    .objects-view-container {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        margin: 1em 3em;
+    }
+
+    .object-container {
+        height: 100%;
+        width: 27rem;
+    }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1330px) {
+
+    .create-container {
+        margin-left: 3em;
+    }
+    
+    .view-option-container {
+        width: 100%;
+        margin-left: -4em;
+    }
+    
+    .object-container {
+        width: 35em;
+    }
+
+    .ivc {
+        width: 84%;
+    }
+
+    .rtc {
+        width: 84%
+    }
+
+    .cvc {
+        width: 84%;
+    }
+}

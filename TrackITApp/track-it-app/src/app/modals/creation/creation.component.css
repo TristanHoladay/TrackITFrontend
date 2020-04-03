@@ -6,3 +6,15 @@
     text-shadow: 2px 2px black;
     border-radius: 1em;
 }
+
+@media only screen and (min-width: 785px) and (max-width: 899px) {
+    .crtbtn {
+        width: 18em;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .crtbtn {
+        height: 8em; 
+    }
+}
